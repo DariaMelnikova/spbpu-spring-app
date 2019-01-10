@@ -1,0 +1,31 @@
+<h1>Greeting</h1>
+<div [hidden]="!authenticated()">
+  <h3>User actions</h3>
+  <div [hidden]="!isAdmin" style="text-align:center" class="container">
+    <ul class="nav nav-pills">
+      <li><a routerLinkActive="active" routerLink="/givebonus">Give Bonus</a></li>
+      <li><a routerLinkActive="active" routerLink="/managetickets">Manage tickets</a></li>
+      <li><a routerLinkActive="active" routerLink="/createplay">Create new play</a></li>
+    </ul>
+  </div>
+  <div [hidden]="!isViewer" style="text-align:center" class="container">
+      <ul class="nav nav-pills">
+        <li><a routerLinkActive="active" routerLink="/buyticket">Buy ticket</a></li>
+        <li><a routerLinkActive="active" routerLink="/boughttickets">Bought tickets</a></li>
+      </ul>
+  </div>
+  <div [hidden]="!isDirector" style="text-align:center" class="container">
+      <ul class="nav nav-pills">
+        <li><a routerLinkActive="active" routerLink="/createrole">Create role</a></li>
+        <li><a routerLinkActive="active" routerLink="/requestbonus">Request bonus</a></li>
+      </ul>
+  </div>
+  <div [hidden]="!isActor" style="text-align:center" class="container">
+      <ul class="nav nav-pills">
+        <li><a routerLinkActive="active" routerLink="/manageroles">Manage roles</a></li>
+      </ul>
+  </div>
+</div>
+<div [hidden]="authenticated()">
+	<p>Login to see your greeting</p>
+</div>

@@ -1,0 +1,10 @@
+<div *ngIf="roles">
+    Roles:<br>
+    <tbody>
+        <tr *ngFor="let role of roles">
+            <td>{{role.description}}</td>
+            <button (click)="accept(role)">Accept</button>
+            <button (click)="decline(role)">Decline</button>
+        </tr>
+    </tbody>
+</div>

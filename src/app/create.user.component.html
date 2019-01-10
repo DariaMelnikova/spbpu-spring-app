@@ -1,0 +1,28 @@
+<form role="form" (submit)="create()">
+        <div class="form-group">
+            <label for="login">Login:</label> 
+            <input type="text" class="form-control" id="login" name="login" [(ngModel)]="user.login"/>
+        </div>
+        <div class="form-group">
+                <label for="firstName">First Name:</label> 
+                <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="user.firstName"/>
+        </div>
+        <div class="form-group">
+                <label for="lastName">Last Name:</label> 
+                <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="user.lastName"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label> 
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password"/>
+        </div>
+        <div class="form-group">
+                <label for="occupation">Occupation: </label> 
+                <select name="occupation" [(ngModel)]="user.occupation">
+                    <option value="ACTOR">Actor</option>
+                    <option value="VIEWER">Viewer</option>
+                    <option value="DIRECTOR">Director</option>
+                    <option value="ADMINISTRATOR">Administrator</option>
+                </select>
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>

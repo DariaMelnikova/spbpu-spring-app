@@ -1,0 +1,25 @@
+<form role="form" (submit)="create()">
+    <div class="form-group">
+        <label for="name">Play name:</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="play.name"/>
+    </div>
+    <div class="form-group">
+        <label for="director">Director: </label>
+        <select name="director" id="director" [ngModel]="play.director" (ngModelChange)="onChange($event)">
+            <option [ngValue]="user" *ngFor="let user of directors">{{ user.firstName }} {{ user.lastName }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" id="description" name="description" [(ngModel)]="play.description"/>
+    </div>
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" class="form-controll" id="date" name="date" [(ngModel)]="play.date"/>
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" class="form-controll" id="price" name="price" [(ngModel)]="play.ticketPrice"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

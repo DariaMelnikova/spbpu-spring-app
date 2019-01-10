@@ -1,0 +1,8 @@
+<div *ngIf="tickets">
+    <tbody>
+        <tr *ngFor="let ticket of tickets">
+            <td>{{ ticket.play.name }} Place: {{ ticket.place }} Price: {{ ticket.price }}</td>
+            <button (click)="requestReturn(ticket)">Request return</button>
+        </tr>
+    </tbody>
+</div>

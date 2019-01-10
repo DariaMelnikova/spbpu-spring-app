@@ -1,0 +1,19 @@
+<div *ngIf="previousPlays">
+    Click and then select actor and set amount<br>
+    <tbody>
+        <tr *ngFor="let play of previousPlays">
+            <td (click)="onPlaySelected(play)">{{ play.play.name }}</td>
+        </tr>
+    </tbody>
+    <div *ngIf="selectedPlay">
+        <select [ngModel]="selectedActor" (ngModelChange)="onActorChange($event)">
+            <option [ngValue]="actor" *ngFor="let actor of selectedPlay.actors">{{ actor.firstName }} {{ actor.lastName }}</option>
+        </select>
+        <div class="form-group">
+            <label for="price">Amount:</label> 
+            <input type="number" class="form-controll" id="price" name="price" [(ngModel)]="selectedPrice"/>
+        </div>
+        <br>
+        <button (click)="requestBonus()">Request bonus</button>
+    </div>
+</div>

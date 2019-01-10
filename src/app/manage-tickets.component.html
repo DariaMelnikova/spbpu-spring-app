@@ -1,0 +1,10 @@
+<h1>Manage tickets</h1>
+<div *ngIf="tickets">
+    <tbody class="tickets">
+        <tr *ngFor="let ticket of tickets">
+            <td>perf: {{ ticket.play.name }} place: {{ ticket.place }} status: {{ ticket.status }}</td>
+            <button (click)="approveTicket(ticket)">Approve</button>
+            <button (click)="refuseReturn(ticket)">Refuse</button>
+        </tr>
+    </tbody>
+</div>

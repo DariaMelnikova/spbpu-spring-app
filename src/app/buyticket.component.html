@@ -1,0 +1,19 @@
+<h1>Buy ticket</h1>
+<br>Click on performane name:<br>
+<div *ngIf="upcomingPlays">
+    <tbody class="upcomingPlays">
+        <tr *ngFor="let play of upcomingPlays">
+            <td (click)="showPlayInfo(play)">{{ play.play.name }}</td>
+        </tr>
+    </tbody>
+    <br>Description: {{ selectedPlay.play.description }}<br>
+    <div *ngIf="selectedPlay">
+        <tbody class="tickets">
+            <tr *ngFor="let ticket of selectedPlay.tickets">
+                <td (click)="showTicketInfo(ticket)">Place: {{ ticket.place }}, Price: {{ticket.price}}</td>
+            </tr>
+        </tbody>
+        <br>Selected Ticket Info<br>Place: {{ selectedTicket.place }}<br>Price: {{ selectedTicket.price }}
+        <br><button (click)="buyTicket()">Buy</button>
+    </div>
+</div>

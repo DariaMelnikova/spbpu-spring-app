@@ -1,0 +1,29 @@
+<div *ngIf="directorPlays">
+    Click on name to see roles and available actors<br>
+    <tbody>
+        <tr *ngFor="let play of directorPlays">
+            <td (click)="onPlaySelected(play)">{{ play.play.name }}</td>
+        </tr>
+    </tbody>
+    <br>
+    <div *ngIf="selectedPlay">
+        Roles:<br>
+        <tbody>
+            <tr *ngFor="let role of selectedPlay.play.roles">
+                <td>{{ role.description }}</td>
+            </tr>
+        </tbody>
+        <br>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" id="description" name="description" [(ngModel)]="createdRole.description"/>
+        </div>
+        <br>
+        <select [ngModel]="createdRole.actor" (ngModelChange)="onActorChange($event)">
+            <option [ngValue]="actor" *ngFor="let actor of selectedPlay.actors">{{ actor.firstName }} {{ actor.lastName }}</option>
+        </select>
+        <br>
+        <br>
+        <button (click)="createRole()">Create role</button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<h1>Give or refuse bonuses</h1>
+<div *ngIf="bonusRequests">
+    <tbody class="bonuses">
+        <tr *ngFor="let request of bonusRequests">
+            <td>{{ request.actor.firstName }} {{ request.actor.lastName }} amount: {{ request.bonus.amount }}</td>
+            <button (click)="giveBonus(request)">Give</button>
+            <button (click)="refuseBonus(request)">Refuse</button>
+        </tr>
+    </tbody>
+</div>
